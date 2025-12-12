@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physiatić | تعلم الفيزياء</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="fake-error-screen">
+        <div class="error-content">
+            <h1>ERROR 404</h1>
+            <p>حدث خطأ غير متوقع... جاري محاولة الاسترداد...</p>
+        </div>
+    </div>
+
+    <div id="welcome-message" class="hidden">
+        <h2>الكلمة التي تعني "thank you" في اللغة العربية هي "شكراً" 😂</h2>
+    </div>
+
+    <div id="main-app" class="hidden">
+        
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-atom fa-spin"></i>
+                <span>Physiatić</span>
+            </div>
+            <button id="theme-toggle" class="theme-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            
+            <div id="user-info-display" class="user-info hidden">
+                <span id="display-username"></span>
+                <i id="verified-badge" class="fa-solid fa-certificate hidden" title="حساب موثق"></i>
+            </div>
+        </header>
+
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <h2>تسجيل الدخول</h2>
+                <input type="text" id="login-username" placeholder="اسم المستخدم">
+                <input type="password" id="login-password" placeholder="كلمة المرور">
+                <button id="login-btn">دخول</button>
+            </div>
+        </div>
+
+        <section id="home-section" class="active-section">
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <h1>الفيزياء... لغة الكون</h1>
+                    <p>استكشف أسرار المادة والطاقة معنا.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="https://img.freepik.com/free-vector/science-lab-concept-illustration_114360-1284.jpg" alt="Physics Art">
+                </div>
+            </div>
+
+            <div class="departments-container">
+                <button class="dept-trigger" id="dept-trigger">الأقسام الدراسية <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="dept-list hidden" id="dept-list">
+                    <div class="dept-item" onclick="navigateTo('prep')">إعدادي</div>
+                    <div class="dept-item disabled">أولى (قريباً)</div>
+                    <div class="dept-item disabled">ثانية (قريباً)</div>
+                    <div class="dept-item disabled">ثالثة (قريباً)</div>
+                    <div class="dept-item disabled">رابعة (قريباً)</div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <button id="about-btn" class="main-btn">About Us</button>
+                <div id="about-content" class="hidden">
+                    <h3>عن الموقع</h3>
+                    <p>منصة تعليمية متطورة لتبسيط مفاهيم الفيزياء لطلاب الهندسة.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="prep-section" class="hidden-section">
+            <div class="prep-header">
+                <button onclick="navigateTo('home')">الرئيسية</button>
+                <span class="separator">/</span>
+                <span class="current-crumb">إعدادي (Preparatory)</span>
+            </div>
+
+            <div id="admin-controls" class="admin-controls hidden">
+                <button id="add-content-btn" class="fab-btn"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+            <div class="content-feed" id="content-feed">
+                </div>
+        </section>
+
+        <div id="upload-modal" class="modal hidden">
+            <div class="modal-content animate-pop">
+                <h3>إضافة جديد</h3>
+                <div class="upload-options">
+                    <button onclick="selectUploadType('folder')"><i class="fa-solid fa-folder"></i> مجلد</button>
+                    <button onclick="selectUploadType('file')"><i class="fa-solid fa-file"></i> ملف</button>
+                    <button onclick="selectUploadType('video')"><i class="fa-solid fa-video"></i> فيديو</button>
+                    <button onclick="selectUploadType('post')"><i class="fa-solid fa-pen"></i> بوست</button>
+                </div>
+                <div id="upload-form" class="hidden">
+                    <input type="text" id="content-title" placeholder="العنوان">
+                    <textarea id="content-desc" placeholder="الوصف..."></textarea>
+                    <button id="submit-upload-btn">نشر</button>
+                </div>
+                <button class="close-modal" onclick="closeUploadModal()">إغلاق</button>
+            </div>
+        </div>
+
+        <footer>
+            <div class="social-icons">
+                <a href="#" class="fb-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="wa-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="phone-icon"><i class="fa-solid fa-phone"></i></a>
+                <span>تواصل معي</span>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2025 (BIMBO)</p>
+                <p class="dev-name">Developed by: Eng. Adham Fahmy</p>
+            </div>
+            <button id="edit-footer-btn" class="hidden"><i class="fa-solid fa-pen"></i> تعديل</button>
+        </footer>
+
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
